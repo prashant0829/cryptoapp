@@ -1,14 +1,8 @@
 import "./App.css";
-import { Route, Link, Routes } from "react-router-dom";
-import { Layout, Typography, Space } from "antd";
+import { Route, Routes } from "react-router-dom";
+import { Layout, Typography } from "antd";
 import { Navbar } from "./components";
-import {
-  Homepage,
-  Cryptocurrencies,
-  CryptoDetails,
-  News,
-  Exchanges,
-} from "./pages";
+import { Homepage, Cryptocurrencies, CryptoDetails, News } from "./pages";
 function App() {
   return (
     <div className="app">
@@ -20,7 +14,6 @@ function App() {
           <div className="routes">
             <Routes>
               <Route exact path="/" element={<Homepage />} />
-              <Route exact path="/exchanges" element={<Exchanges />} />
               <Route
                 exact
                 path="/cryptocurrencies"
@@ -33,16 +26,19 @@ function App() {
         </Layout>
         <div className="footer">
           <Typography.Title
-            level={5}
+            level={4}
             style={{ color: "white", textAlign: "center" }}>
             Cryptoverse <br />
             All rights reserved
           </Typography.Title>
-          <Space>
-            <Link to="/">Home</Link>
-            <Link to="/exchanges">Exchanges</Link>
-            <Link to="/news">News</Link>
-          </Space>
+          <div
+            style={{
+              color: "white",
+              textAlign: "center",
+              fontFamily: "monospace",
+            }}>
+            Created By Prashant Bansal
+          </div>
         </div>
       </div>
     </div>
